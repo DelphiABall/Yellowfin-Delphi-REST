@@ -26,7 +26,7 @@ Each logical section of the API is broken down into three files for clarity and 
 | `yellowfinbi.api.<section>.intf` | Defines the interface structure for the API section. |
 | `yellowfinbi.api.<section>.classes` | Provides the default class implementations for those interfaces. |
 
-This modular structure, based on Interfaces allows you to **extend or override any class** without modifying the core code structure.
+This modular structure, based on Interfaces, allows you to **extend or override any class** without modifying the core code structure.
 
 ---
 
@@ -35,7 +35,7 @@ Includes a simple **command-line demonstration** showing how to:
 - Authenticate against Yellowfin via the REST API.  
 - Run a **Single Sign-On (SSO)** request to generate and return a valid **login token** for a specific user.  
 
-This example is a great starting point to understand how to connect your application with Yellowfin BI.
+This example is a great starting point to explore the Yellowfin API, how this library wraps it up, and start embedding basic actions into your application.
 
 ---
 
