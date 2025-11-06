@@ -170,11 +170,11 @@ begin
       Writeln('> "Login Token"   - is single use token used for single sign on. It is possible to set a number of params to effect how the login elements are rendered (e.g. with System headers, log off buttons etc)');
 
       Writeln('Press Enter to continue');
-      Readln();
-              '
+      Readln;
+              
       // Refresh Token
       Writeln;
-      Writeln('Refresh Token: ');
+      Writeln('Refresh Token: - Required to get a Access Token ');
       AdminRefreshToken := TokenManager.GetRefreshToken(ConfigData.ServerDetails, ConfigData.AdminCredentials);
       
       Writeln('Status: ' + AdminRefreshToken.Status.ToString);
@@ -189,7 +189,7 @@ begin
       end;
 
       // Access Token
-      Writeln('Access Token: (lasts 20 minutes - 1200 seconds)');
+      Writeln('Access Token: (lasts 20 minutes - 1200 seconds) - Used to call most of the Yellowfin API, is linked to the user from the Refresh Token');
       //To manyally manage a token call TYF_TokenRequests.GetAccessToken(ConfigData.ServerDetails, AdminRefreshToken.Token);
       AdminAccessToken := TYFAccessTokenManager.Create(ConfigData.ServerDetails, AdminRefreshToken.Token, True);
 
