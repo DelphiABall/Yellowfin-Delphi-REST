@@ -260,6 +260,7 @@
         <DCCReference Include="..\..\Source\yellowfinbi.api.users.intf.pas"/>
         <DCCReference Include="..\..\Source\yellowfinbi.api.users.pas"/>
         <DCCReference Include="..\..\Source\yellowfinbi.api.security.tokenManager.intf.pas"/>
+        <None Include="..\..\README.md"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -280,6 +281,8 @@
                 <Source>
                     <Source Name="MainSource">YFSimpleAPIExample.dpr</Source>
                 </Source>
+                <WelcomePageFile Path="..\..\README.md"/>
+                <WelcomePageFolder/>
             </Delphi.Personality>
             <Deployment Version="5">
                 <DeployFile LocalName="$(BDS)\Redist\iossimulator\libcgunwind.1.0.dylib" Class="DependencyModule">
@@ -294,6 +297,12 @@
                 </DeployFile>
                 <DeployFile LocalName="$(BDS)\Redist\osx32\libcgunwind.1.0.dylib" Class="DependencyModule">
                     <Platform Name="OSX32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\README.md" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
