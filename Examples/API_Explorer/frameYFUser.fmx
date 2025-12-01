@@ -1,0 +1,179 @@
+object YFUserFrame: TYFUserFrame
+  Size.Width = 258.000000000000000000
+  Size.Height = 336.000000000000000000
+  Size.PlatformDefault = False
+  object Layout2: TLayout
+    Align = Client
+    Size.Width = 258.000000000000000000
+    Size.Height = 336.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object edtOrg: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Top
+      TabOrder = 3
+      Text = 'Default'
+      Position.X = 6.000000000000000000
+      Position.Y = 188.000000000000000000
+      Margins.Left = 6.000000000000000000
+      Margins.Top = 20.000000000000000000
+      Margins.Right = 6.000000000000000000
+      Margins.Bottom = 6.000000000000000000
+      Size.Width = 246.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      OnChange = SettingsChanged
+      Left = 682
+      Top = 229
+      object Label1: TLabel
+        Position.Y = -19.000000000000000000
+        Size.Width = 200.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.WordWrap = False
+        TextSettings.Trimming = None
+        Text = 'Client Org'
+        TabOrder = 0
+      end
+    end
+    object edtPassword: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Top
+      TabOrder = 2
+      Password = True
+      PasswordChar = '*'
+      Text = 'test'
+      Position.X = 6.000000000000000000
+      Position.Y = 132.000000000000000000
+      Margins.Left = 6.000000000000000000
+      Margins.Top = 20.000000000000000000
+      Margins.Right = 6.000000000000000000
+      Margins.Bottom = 6.000000000000000000
+      Size.Width = 246.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      OnChange = SettingsChanged
+      Left = 357
+      Top = 229
+      object PasswordEditButton1: TPasswordEditButton
+        Touch.InteractiveGestures = [LongTap]
+        CanFocus = False
+        Cursor = crArrow
+        Size.Width = 28.000000000000000000
+        Size.Height = 26.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+      end
+      object Label3: TLabel
+        Position.Y = -18.000000000000000000
+        Size.Width = 200.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.WordWrap = False
+        TextSettings.Trimming = None
+        Text = 'Password'
+        TabOrder = 0
+      end
+    end
+    object edtURL: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Top
+      TabOrder = 0
+      PasswordChar = '*'
+      Text = 'https://sandbox.yellowfinbi.com'
+      Position.X = 6.000000000000000000
+      Position.Y = 20.000000000000000000
+      Margins.Left = 6.000000000000000000
+      Margins.Top = 20.000000000000000000
+      Margins.Right = 6.000000000000000000
+      Margins.Bottom = 6.000000000000000000
+      Size.Width = 246.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      OnChange = SettingsChanged
+      Left = 357
+      Top = 229
+      object Label4: TLabel
+        Position.Y = -18.000000000000000000
+        Size.Width = 200.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.WordWrap = False
+        TextSettings.Trimming = None
+        Text = 'URL'
+        TabOrder = 0
+      end
+    end
+    object edtUserName: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Top
+      TabOrder = 1
+      Text = 'admin@yellowfin.com.au'
+      Position.X = 6.000000000000000000
+      Position.Y = 76.000000000000000000
+      Margins.Left = 6.000000000000000000
+      Margins.Top = 20.000000000000000000
+      Margins.Right = 6.000000000000000000
+      Margins.Bottom = 6.000000000000000000
+      Size.Width = 246.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      OnChange = SettingsChanged
+      Left = 32
+      Top = 229
+      object Label2: TLabel
+        Position.Y = -16.000000000000000000
+        Size.Width = 200.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.WordWrap = False
+        TextSettings.Trimming = None
+        Text = 'UserName'
+        TabOrder = 0
+      end
+    end
+    object Save: TButton
+      Align = Center
+      Size.Width = 80.000000000000000000
+      Size.Height = 31.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 5
+      Text = 'Save'
+      OnClick = SaveClick
+      object GlowEffect1: TGlowEffect
+        Softness = 0.400000005960464500
+        GlowColor = claGreen
+        Opacity = 0.899999976158142100
+        Enabled = False
+      end
+    end
+    object edtInstanceName: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Top
+      TabOrder = 4
+      Text = 'YELLOWFIN'
+      Position.X = 6.000000000000000000
+      Position.Y = 244.000000000000000000
+      Margins.Left = 6.000000000000000000
+      Margins.Top = 20.000000000000000000
+      Margins.Right = 6.000000000000000000
+      Margins.Bottom = 6.000000000000000000
+      Size.Width = 246.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      OnChange = SettingsChanged
+      Left = 682
+      Top = 229
+      object Label5: TLabel
+        Position.Y = -19.000000000000000000
+        Size.Width = 200.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.WordWrap = False
+        TextSettings.Trimming = None
+        Text = 'Instance'
+        TabOrder = 0
+      end
+    end
+  end
+end

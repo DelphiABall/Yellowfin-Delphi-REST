@@ -1,0 +1,357 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Yellowfin API Browser'
+  ClientHeight = 600
+  ClientWidth = 800
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnShow = FormShow
+  DesignerMasterStyle = 0
+  object Layout1: TLayout
+    Align = Client
+    Size.Width = 800.000000000000000000
+    Size.Height = 560.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+    object tcContent: TTabControl
+      Align = Client
+      Size.Width = 800.000000000000000000
+      Size.Height = 560.000000000000000000
+      Size.PlatformDefault = False
+      TabIndex = 0
+      TabOrder = 0
+      TabPosition = PlatformDefault
+      Sizes = (
+        800s
+        534s
+        800s
+        534s)
+      object tabSettings: TTabItem
+        CustomIcon = <
+          item
+          end>
+        IsSelected = True
+        Size.Width = 63.000000000000000000
+        Size.Height = 26.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = ''
+        TabOrder = 0
+        Text = 'Settings'
+        ExplicitSize.cx = 63.000000000000000000
+        ExplicitSize.cy = 26.000000000000000000
+        inline YFUserFrame1: TYFUserFrame
+          Align = Top
+          Size.Width = 800.000000000000000000
+          Size.Height = 336.000000000000000000
+          Size.PlatformDefault = False
+          inherited Layout2: TLayout
+            Size.Width = 800.000000000000000000
+            inherited edtOrg: TEdit
+              Size.Width = 788.000000000000000000
+            end
+            inherited edtPassword: TEdit
+              Size.Width = 788.000000000000000000
+            end
+            inherited edtURL: TEdit
+              KeyboardType = URL
+              Size.Width = 788.000000000000000000
+            end
+            inherited edtUserName: TEdit
+              KeyboardType = EmailAddress
+              Size.Width = 788.000000000000000000
+            end
+            inherited edtInstanceName: TEdit
+              Size.Width = 788.000000000000000000
+            end
+          end
+        end
+      end
+      object tabData: TTabItem
+        CustomIcon = <
+          item
+          end>
+        IsSelected = False
+        Size.Width = 45.000000000000000000
+        Size.Height = 26.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = ''
+        TabOrder = 0
+        Text = 'Data'
+        ExplicitSize.cx = 45.000000000000000000
+        ExplicitSize.cy = 26.000000000000000000
+        object Layout3: TLayout
+          Align = Top
+          Size.Width = 800.000000000000000000
+          Size.Height = 57.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          object Layout4: TLayout
+            Align = Right
+            Position.X = 639.000000000000000000
+            Size.Width = 111.000000000000000000
+            Size.Height = 57.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            object cbVerb: TComboBox
+              Align = Top
+              Items.Strings = (
+                'Get'
+                'Post'
+                'Patch'
+                'Put'
+                'Delete')
+              ItemIndex = 0
+              Margins.Left = 2.000000000000000000
+              Margins.Top = 20.000000000000000000
+              Margins.Right = 2.000000000000000000
+              Margins.Bottom = 2.000000000000000000
+              Position.X = 2.000000000000000000
+              Position.Y = 20.000000000000000000
+              Size.Width = 107.000000000000000000
+              Size.Height = 22.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 1
+              OnChange = cbVerbChange
+              object Label6: TLabel
+                Position.Y = -18.000000000000000000
+                Size.Width = 77.000000000000000000
+                Size.Height = 17.000000000000000000
+                Size.PlatformDefault = False
+                Text = 'Verb'
+                TabOrder = 0
+              end
+            end
+          end
+          object Layout5: TLayout
+            Align = Client
+            Size.Width = 639.000000000000000000
+            Size.Height = 57.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 2
+            object edtEndPoint: TEdit
+              Touch.InteractiveGestures = [LongTap, DoubleTap]
+              Align = Top
+              TabOrder = 1
+              PasswordChar = '*'
+              Text = '/api'
+              Position.X = 6.000000000000000000
+              Position.Y = 20.000000000000000000
+              Margins.Left = 6.000000000000000000
+              Margins.Top = 20.000000000000000000
+              Margins.Right = 6.000000000000000000
+              Margins.Bottom = 6.000000000000000000
+              Size.Width = 627.000000000000000000
+              Size.Height = 22.000000000000000000
+              Size.PlatformDefault = False
+              OnKeyDown = edtEndPointKeyDown
+              Left = 357
+              Top = 229
+              object Label5: TLabel
+                Position.Y = -18.000000000000000000
+                Text = 'EndPoint'
+                TabOrder = 0
+              end
+            end
+          end
+          object Layout6: TLayout
+            Align = MostRight
+            Position.X = 750.000000000000000000
+            Size.Width = 50.000000000000000000
+            Size.Height = 57.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 3
+            object btnExecute: TButton
+              Align = Client
+              Margins.Left = 2.000000000000000000
+              Margins.Top = 2.000000000000000000
+              Margins.Right = 2.000000000000000000
+              Margins.Bottom = 2.000000000000000000
+              Size.Width = 46.000000000000000000
+              Size.Height = 53.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'playtoolbutton'
+              TabOrder = 0
+              Text = 'btnExecute'
+              OnClick = btnExecuteClick
+              object GlowEffectURL: TInnerGlowEffect
+                Softness = 0.400000005960464500
+                GlowColor = claGreen
+                Opacity = 0.899999976158142100
+                Enabled = False
+              end
+            end
+          end
+        end
+        object tcOutput: TTabControl
+          Align = Client
+          Size.Width = 800.000000000000000000
+          Size.Height = 477.000000000000000000
+          Size.PlatformDefault = False
+          TabIndex = 0
+          TabOrder = 2
+          TabPosition = PlatformDefault
+          Sizes = (
+            800s
+            451s
+            800s
+            451s
+            800s
+            451s)
+          object tabBrowser: TTabItem
+            CustomIcon = <
+              item
+              end>
+            IsSelected = True
+            Size.Width = 63.000000000000000000
+            Size.Height = 26.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = ''
+            TabOrder = 0
+            Text = 'Browser'
+            ExplicitSize.cx = 63.000000000000000000
+            ExplicitSize.cy = 26.000000000000000000
+            object WebBrowserData: TWebBrowser
+              Align = Client
+              Size.Width = 800.000000000000000000
+              Size.Height = 451.000000000000000000
+              Size.PlatformDefault = False
+              WindowsEngine = EdgeIfAvailable
+            end
+          end
+          object tabSource: TTabItem
+            CustomIcon = <
+              item
+              end>
+            IsSelected = False
+            Size.Width = 57.000000000000000000
+            Size.Height = 26.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = ''
+            TabOrder = 0
+            Text = 'Source'
+            ExplicitSize.cx = 57.000000000000000000
+            ExplicitSize.cy = 26.000000000000000000
+            object memoSource: TMemo
+              Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+              DataDetectorTypes = []
+              TextSettings.WordWrap = True
+              Align = Client
+              Size.Width = 800.000000000000000000
+              Size.Height = 451.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 0
+              Viewport.Width = 800.000000000000000000
+              Viewport.Height = 451.000000000000000000
+            end
+          end
+          object tabBody: TTabItem
+            CustomIcon = <
+              item
+              end>
+            IsSelected = False
+            Size.Width = 47.000000000000000000
+            Size.Height = 26.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = ''
+            TabOrder = 0
+            Text = 'Body'
+            ExplicitSize.cx = 47.000000000000000000
+            ExplicitSize.cy = 26.000000000000000000
+            object memoBody: TMemo
+              Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+              DataDetectorTypes = []
+              TextSettings.WordWrap = True
+              Align = Client
+              Size.Width = 800.000000000000000000
+              Size.Height = 451.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 0
+              Viewport.Width = 800.000000000000000000
+              Viewport.Height = 451.000000000000000000
+            end
+          end
+        end
+      end
+    end
+  end
+  object ToolBar1: TToolBar
+    Size.Width = 800.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+    object btnMenu: TButton
+      Align = Left
+      Size.Width = 41.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'detailstoolbutton'
+      TabOrder = 0
+      Text = 'btnMenu'
+    end
+  end
+  object MultiView1: TMultiView
+    TargetControl = Layout1
+    MasterButton = btnMenu
+    Mode = Drawer
+    NavigationPaneOptions.CollapsedWidth = 103.000000000000000000
+    OnStartShowing = MultiView1StartShowing
+    OnHidden = MultiView1Hidden
+    Size.Width = 250.000000000000000000
+    Size.Height = 560.000000000000000000
+    Size.PlatformDefault = False
+    Visible = False
+    TabOrder = 4
+    object Button2: TButton
+      Align = Top
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Right = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Position.X = 2.000000000000000000
+      Position.Y = 55.000000000000000000
+      Size.Width = 246.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = 'Settings'
+      OnClick = Button2Click
+    end
+    object Button4: TButton
+      Align = Top
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Right = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Position.X = 2.000000000000000000
+      Position.Y = 2.000000000000000000
+      Size.Width = 246.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Explorer'
+      OnClick = Button4Click
+    end
+    object lblCode: TLabel
+      Align = Client
+      Size.Width = 250.000000000000000000
+      Size.Height = 437.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.HorzAlign = Center
+      TextSettings.VertAlign = Trailing
+      TabOrder = 3
+    end
+    object lblStatus: TLabel
+      Align = Bottom
+      Position.Y = 543.000000000000000000
+      Size.Width = 250.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.HorzAlign = Center
+      Text = '- Status -'
+      TabOrder = 2
+    end
+  end
+end

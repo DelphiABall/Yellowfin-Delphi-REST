@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{F51780F9-89FD-41C5-9F9A-96CF34CE1F57}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Simple\YFSimpleAPIExample.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="API_Explorer\YFAPIExplorer.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="YFSimpleAPIExample">
+        <MSBuild Projects="Simple\YFSimpleAPIExample.dproj"/>
+    </Target>
+    <Target Name="YFSimpleAPIExample:Clean">
+        <MSBuild Projects="Simple\YFSimpleAPIExample.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="YFSimpleAPIExample:Make">
+        <MSBuild Projects="Simple\YFSimpleAPIExample.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="YFAPIExplorer">
+        <MSBuild Projects="API_Explorer\YFAPIExplorer.dproj"/>
+    </Target>
+    <Target Name="YFAPIExplorer:Clean">
+        <MSBuild Projects="API_Explorer\YFAPIExplorer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="YFAPIExplorer:Make">
+        <MSBuild Projects="API_Explorer\YFAPIExplorer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="YFSimpleAPIExample;YFAPIExplorer"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="YFSimpleAPIExample:Clean;YFAPIExplorer:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="YFSimpleAPIExample:Make;YFAPIExplorer:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
