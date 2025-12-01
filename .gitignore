@@ -80,3 +80,15 @@ __recovery/
 
 # Boss dependency manager vendor folder https://github.com/HashLoad/boss
 modules/
+/Examples/API_Explorer/YFAPIExplorer.Artwork
+/Examples/API_Explorer/iOSDevice64
+/Examples/API_Explorer/Android64
+Examples/API_Explorer/AndroidManifest.template.xml
+Examples/API_Explorer/Entitlement.TemplateiOS.xml
+Examples/API_Explorer/Entitlement.TemplateOSX.xml
+Examples/API_Explorer/info.plist.TemplateiOS.xml
+Examples/API_Explorer/info.plist.TemplateOSX.xml
+/Examples/API_Explorer/Win32
+/Examples/API_Explorer/LaunchScreen.TemplateiOS
+/Examples/API_Explorer/OSX64
+Examples/API_Explorer/YFAPIExplorer.res
