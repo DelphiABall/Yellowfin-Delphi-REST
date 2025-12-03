@@ -30,7 +30,7 @@ type
     frameUserLogin1: TframeUserLogin;
     EdgeBrowser: TEdgeBrowser;
     actSSOOptions: TAction;
-    TabSheet1: TTabSheet;
+    tabOptions: TTabSheet;
     cbLogOff: TCheckBox;
     cbSideNavigator: TCheckBox;
     cbToolbar: TCheckBox;
@@ -63,7 +63,7 @@ var
 implementation
 
 uses Yellowfin.Settings, yellowfinbi.api.common, Yellowfin.Settings.INI,
-  yellowfinbi.api.security;
+  yellowfinbi.api.security, Yellowfinbi.api.users;
 
 {$R *.dfm}
 

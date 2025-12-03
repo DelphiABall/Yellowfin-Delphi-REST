@@ -19,7 +19,7 @@ object frameUserLogin: TframeUserLogin
     Margins.Top = 6
     Margins.Right = 6
     Margins.Bottom = 6
-    ActivePage = tabLogin
+    ActivePage = tabSettings
     Align = alClient
     MultiLine = True
     TabOrder = 0
@@ -45,7 +45,6 @@ object frameUserLogin: TframeUserLogin
         Anchors = []
         Caption = 'Login'
         TabOrder = 0
-        ExplicitTop = 271
         DesignSize = (
           539
           338)

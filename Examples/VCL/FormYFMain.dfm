@@ -6,8 +6,8 @@ object Form1: TForm1
   Margins.Right = 6
   Margins.Bottom = 6
   Caption = 'Yellowfin VCL Example'
-  ClientHeight = 1192
-  ClientWidth = 1770
+  ClientHeight = 1110
+  ClientWidth = 1758
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -21,7 +21,7 @@ object Form1: TForm1
     Left = 0
     Top = 100
     Width = 400
-    Height = 1092
+    Height = 1010
     Margins.Left = 6
     Margins.Top = 6
     Margins.Right = 6
@@ -32,11 +32,12 @@ object Form1: TForm1
     OpenedWidth = 400
     Placement = svpLeft
     TabOrder = 0
+    ExplicitHeight = 1092
     object catMenuItems: TCategoryButtons
       Left = 0
       Top = 0
       Width = 400
-      Height = 1092
+      Height = 1010
       Margins.Left = 6
       Margins.Top = 6
       Margins.Right = 6
@@ -92,12 +93,13 @@ object Form1: TForm1
       RegularButtonColor = clNone
       SelectedButtonColor = clNone
       TabOrder = 0
+      ExplicitHeight = 684
     end
   end
   object pnlToolbar: TPanel
     Left = 0
     Top = 0
-    Width = 1770
+    Width = 1758
     Height = 100
     Margins.Left = 6
     Margins.Top = 6
@@ -108,6 +110,7 @@ object Form1: TForm1
     Color = 12477460
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 1770
     object imgMenu: TImage
       Left = 20
       Top = 16
@@ -151,15 +154,17 @@ object Form1: TForm1
   object pcMain: TPageControl
     Left = 400
     Top = 100
-    Width = 1370
-    Height = 1092
+    Width = 1358
+    Height = 1010
     Margins.Left = 6
     Margins.Top = 6
     Margins.Right = 6
     Margins.Bottom = 6
-    ActivePage = TabSheet1
+    ActivePage = tabOptions
     Align = alClient
     TabOrder = 2
+    ExplicitWidth = 1370
+    ExplicitHeight = 1092
     object tabLogin: TTabSheet
       Margins.Left = 6
       Margins.Top = 6
@@ -169,8 +174,8 @@ object Form1: TForm1
       inline frameUserLogin1: TframeUserLogin
         Left = 0
         Top = 0
-        Width = 1354
-        Height = 1032
+        Width = 1342
+        Height = 950
         Margins.Left = 6
         Margins.Top = 6
         Margins.Right = 6
@@ -180,20 +185,20 @@ object Form1: TForm1
         ExplicitWidth = 1354
         ExplicitHeight = 1032
         inherited pcUserLogin: TPageControl
-          Width = 1354
-          Height = 1032
+          Width = 1342
+          Height = 950
           TabPosition = tpBottom
           ExplicitWidth = 1354
           ExplicitHeight = 1032
           inherited tabLogin: TTabSheet
             ExplicitTop = 8
-            ExplicitWidth = 1338
-            ExplicitHeight = 1016
+            ExplicitWidth = 1326
+            ExplicitHeight = 934
             inherited gbLogin: TGroupBox
-              Left = 729
-              Top = 492
-              ExplicitLeft = 729
-              ExplicitTop = 492
+              Left = 422
+              Top = 283
+              ExplicitLeft = 173
+              ExplicitTop = 125
               inherited edtPassword: TLabeledEdit
                 EditLabel.ExplicitLeft = 56
                 EditLabel.ExplicitTop = 165
@@ -209,18 +214,14 @@ object Form1: TForm1
             end
           end
           inherited tabSettings: TTabSheet
-            ExplicitTop = 8
-            ExplicitWidth = 1338
-            ExplicitHeight = 1016
             inherited Label2: TLabel
-              Width = 1338
               StyleElements = [seFont, seClient, seBorder]
             end
             inherited gbSystemDetails: TGroupBox
               Left = 614
               Top = 222
               ExplicitLeft = 614
-              ExplicitTop = 221
+              ExplicitTop = 222
               inherited Label1: TLabel
                 StyleElements = [seFont, seClient, seBorder]
               end
@@ -255,7 +256,9 @@ object Form1: TForm1
                 StyleElements = [seFont, seClient, seBorder]
               end
               inherited seTimeout: TSpinEdit
+                Height = 43
                 StyleElements = [seFont, seClient, seBorder]
+                ExplicitHeight = 43
               end
             end
           end
@@ -272,8 +275,8 @@ object Form1: TForm1
       object EdgeBrowser: TEdgeBrowser
         Left = 0
         Top = 0
-        Width = 1354
-        Height = 1032
+        Width = 1342
+        Height = 950
         Margins.Left = 6
         Margins.Top = 6
         Margins.Right = 6
@@ -283,21 +286,21 @@ object Form1: TForm1
         AllowSingleSignOnUsingOSPrimaryAccount = False
         TargetCompatibleBrowserVersion = '137.0.3296.44'
         UserDataFolder = '%LOCALAPPDATA%\bds.exe.WebView2'
-        ExplicitLeft = 112
-        ExplicitTop = 200
+        ExplicitWidth = 1354
+        ExplicitHeight = 1032
       end
     end
-    object TabSheet1: TTabSheet
+    object tabOptions: TTabSheet
       Margins.Left = 6
       Margins.Top = 6
       Margins.Right = 6
       Margins.Bottom = 6
-      Caption = 'TabSheet1'
+      Caption = 'Options'
       ImageIndex = 2
       object Label1: TLabel
         Left = 0
         Top = 0
-        Width = 1354
+        Width = 1342
         Height = 54
         Margins.Left = 6
         Margins.Top = 6
@@ -317,8 +320,8 @@ object Form1: TForm1
       object FlowPanel1: TFlowPanel
         Left = 0
         Top = 54
-        Width = 1354
-        Height = 978
+        Width = 1342
+        Height = 896
         Margins.Left = 6
         Margins.Top = 6
         Margins.Right = 6
@@ -328,10 +331,8 @@ object Form1: TForm1
         Padding.Top = 20
         ParentColor = True
         TabOrder = 0
-        ExplicitLeft = 104
-        ExplicitTop = 536
-        ExplicitWidth = 865
-        ExplicitHeight = 385
+        ExplicitWidth = 1354
+        ExplicitHeight = 978
         object cbToolbar: TCheckBox
           Left = 0
           Top = 20
