@@ -9,6 +9,9 @@
         <Projects Include="API_Explorer\YFAPIExplorer.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="VCL\YF_VCL_Sample.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -35,14 +38,23 @@
     <Target Name="YFAPIExplorer:Make">
         <MSBuild Projects="API_Explorer\YFAPIExplorer.dproj" Targets="Make"/>
     </Target>
+    <Target Name="YF_VCL_Sample">
+        <MSBuild Projects="VCL\YF_VCL_Sample.dproj"/>
+    </Target>
+    <Target Name="YF_VCL_Sample:Clean">
+        <MSBuild Projects="VCL\YF_VCL_Sample.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="YF_VCL_Sample:Make">
+        <MSBuild Projects="VCL\YF_VCL_Sample.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="YFSimpleAPIExample;YFAPIExplorer"/>
+        <CallTarget Targets="YFSimpleAPIExample;YFAPIExplorer;YF_VCL_Sample"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="YFSimpleAPIExample:Clean;YFAPIExplorer:Clean"/>
+        <CallTarget Targets="YFSimpleAPIExample:Clean;YFAPIExplorer:Clean;YF_VCL_Sample:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="YFSimpleAPIExample:Make;YFAPIExplorer:Make"/>
+        <CallTarget Targets="YFSimpleAPIExample:Make;YFAPIExplorer:Make;YF_VCL_Sample:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

@@ -92,3 +92,6 @@ Examples/API_Explorer/info.plist.TemplateOSX.xml
 /Examples/API_Explorer/LaunchScreen.TemplateiOS
 /Examples/API_Explorer/OSX64
 Examples/API_Explorer/YFAPIExplorer.res
+*.ini
+*.res
+*.vlb
