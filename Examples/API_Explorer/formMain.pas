@@ -232,9 +232,11 @@ begin
   var ReqVerb : TRESTRequestMethod :=  TYFTypes.GetValue<TRESTRequestMethod>('rm'+Uppercase(cbVerb.Text), TRESTRequestMethod.rmGET);
 
   var JBody := if ((memoBody.Lines.Text > '') and (tabBody.Visible)) then
-                  TJSONObject.ParseJSONValue(memoBody.Lines.Text) as TJSONObject
+                 TJSONObject.ParseJSONValue(memoBody.Lines.Text) as TJSONAncestor
                else
-                  nil;
+                 nil;
+//  if ((memoBody.Lines.Text > '') and (tabBody.Visible)) then
+//    var JBody : TJSONAncestor := TJSONObject.ParseJSONValue(memoBody.Lines.Text);
 
   var Transport := TYFTransport.Create(nil,
         ReqVerb,
@@ -297,6 +299,7 @@ begin
             TThread.Synchronize(nil, procedure ()
             begin
               LoadJSONView(JSON.Format(2),'/welcome');
+              Application.ProcessMessages;
             end);
             Self.Caption := 'Loaded';
           finally

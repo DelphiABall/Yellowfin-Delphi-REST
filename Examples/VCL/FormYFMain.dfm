@@ -32,7 +32,6 @@ object Form1: TForm1
     OpenedWidth = 400
     Placement = svpLeft
     TabOrder = 0
-    ExplicitHeight = 1092
     object catMenuItems: TCategoryButtons
       Left = 0
       Top = 0
@@ -93,7 +92,6 @@ object Form1: TForm1
       RegularButtonColor = clNone
       SelectedButtonColor = clNone
       TabOrder = 0
-      ExplicitHeight = 684
     end
   end
   object pnlToolbar: TPanel
@@ -110,7 +108,6 @@ object Form1: TForm1
     Color = 12477460
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 1770
     object imgMenu: TImage
       Left = 20
       Top = 16
@@ -160,11 +157,9 @@ object Form1: TForm1
     Margins.Top = 6
     Margins.Right = 6
     Margins.Bottom = 6
-    ActivePage = tabOptions
+    ActivePage = tabEmbeddedContent
     Align = alClient
     TabOrder = 2
-    ExplicitWidth = 1370
-    ExplicitHeight = 1092
     object tabLogin: TTabSheet
       Margins.Left = 6
       Margins.Top = 6
@@ -182,23 +177,20 @@ object Form1: TForm1
         Margins.Bottom = 6
         Align = alClient
         TabOrder = 0
-        ExplicitWidth = 1354
-        ExplicitHeight = 1032
+        ExplicitWidth = 1342
+        ExplicitHeight = 950
         inherited pcUserLogin: TPageControl
           Width = 1342
           Height = 950
           TabPosition = tpBottom
-          ExplicitWidth = 1354
-          ExplicitHeight = 1032
+          ExplicitWidth = 1342
+          ExplicitHeight = 950
           inherited tabLogin: TTabSheet
-            ExplicitTop = 8
-            ExplicitWidth = 1326
-            ExplicitHeight = 934
             inherited gbLogin: TGroupBox
               Left = 422
               Top = 283
-              ExplicitLeft = 173
-              ExplicitTop = 125
+              ExplicitLeft = 422
+              ExplicitTop = 283
               inherited edtPassword: TLabeledEdit
                 EditLabel.ExplicitLeft = 56
                 EditLabel.ExplicitTop = 165
@@ -214,14 +206,18 @@ object Form1: TForm1
             end
           end
           inherited tabSettings: TTabSheet
+            ExplicitTop = 8
+            ExplicitWidth = 1326
+            ExplicitHeight = 934
             inherited Label2: TLabel
+              Width = 1326
               StyleElements = [seFont, seClient, seBorder]
             end
             inherited gbSystemDetails: TGroupBox
-              Left = 614
-              Top = 222
-              ExplicitLeft = 614
-              ExplicitTop = 222
+              Left = 1738
+              Top = 333
+              ExplicitLeft = 1738
+              ExplicitTop = 333
               inherited Label1: TLabel
                 StyleElements = [seFont, seClient, seBorder]
               end
@@ -286,8 +282,6 @@ object Form1: TForm1
         AllowSingleSignOnUsingOSPrimaryAccount = False
         TargetCompatibleBrowserVersion = '137.0.3296.44'
         UserDataFolder = '%LOCALAPPDATA%\bds.exe.WebView2'
-        ExplicitWidth = 1354
-        ExplicitHeight = 1032
       end
     end
     object tabOptions: TTabSheet
@@ -331,8 +325,6 @@ object Form1: TForm1
         Padding.Top = 20
         ParentColor = True
         TabOrder = 0
-        ExplicitWidth = 1354
-        ExplicitHeight = 978
         object cbToolbar: TCheckBox
           Left = 0
           Top = 20
