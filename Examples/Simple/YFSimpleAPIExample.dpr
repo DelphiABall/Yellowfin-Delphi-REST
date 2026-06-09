@@ -389,6 +389,89 @@ begin
               Writeln(UserUpdateResp.Data);
             end;
 
+            // ─── List Reports ────────────────────────────────────────
+            Writeln;
+            Writeln('Reports:');
+            var ReportsList : IYFReportListItems := TYFReportListItems.Create;
+            if TYF_Reports.GetReports(ConfigData.ServerDetails, UserAccessToken.Token, ReportsList, nil).Successful then
+            begin
+              for var Report in ReportsList.Items do
+                Writeln('  '+Report.Name+' / '+Report.ReportPublishUUID);
+
+              // ─── SSO Direct to First Report ──────────────────────
+              if ReportsList.Count > 0 then
+              begin
+                var FirstReport := ReportsList[0];
+                Writeln;
+                Writeln('SSO Direct to Report: '+FirstReport.Name);
+
+                var ReportParams := TStringList.Create;
+                try
+                  ReportParams.Add('ENTRY=VIEWREPORT');
+                  ReportParams.Add('REPORTUUID='+FirstReport.ReportPublishUUID);
+                  ReportParams.Add('DISABLEHEADER=TRUE');
+                  ReportParams.Add('DISABLESIDENAV=TRUE');
+
+                  var ReportToken := TYF_TokenRequests.GetLoginTokenSSO(
+                    ConfigData.ServerDetails, ConfigData.AdminCredentials,
+                    User.Email, '', orgID, ReportParams, '');
+
+                  if ReportToken.Successful then
+                  begin
+                    Writeln('URL: '+ConfigData.ServerDetails.HostURL+'/logon.i4?LoginWebserviceId='+ReportToken.Token);
+                    Writeln('(Open this URL in a browser to view the report directly)');
+                  end
+                  else
+                    Writeln('Failed: '+ReportToken.Status.ToString);
+                finally
+                  ReportParams.Free;
+                end;
+
+                // ─── Favourite / Unfavourite First Report ────────────
+                Writeln;
+
+                var AlreadyFavourited := False;
+                var Favourites : IYFFavouriteModels := TYFFavouriteModels.Create;
+                if TYF_Users.GetUserFavourites(ConfigData.ServerDetails, UserAccessToken.Token, I, Favourites).Successful then
+                begin
+                  for var Fav in Favourites.Items do
+                  begin
+                    if Fav.ContentId = FirstReport.ReportId then
+                    begin
+                      AlreadyFavourited := True;
+                      Break;
+                    end;
+                  end;
+                end;
+
+                if AlreadyFavourited then
+                begin
+                  Writeln('Report '''+FirstReport.Name+''' is already favourited - unfavouriting...');
+                  var UnfavResp := TYF_Users.UnfavouriteAContentItem(
+                    ConfigData.ServerDetails, UserAccessToken.Token, I, 'report', FirstReport.ReportId);
+                  if UnfavResp.Successful then
+                    Writeln('  Unfavourited successfully.')
+                  else
+                    Writeln('  Failed to unfavourite: '+UnfavResp.Status.ToString);
+                end
+                else
+                begin
+                  Writeln('Report '''+FirstReport.Name+''' is not favourited - favouriting...');
+                  var FavItem : IYFFavouriteModel;
+                  var FavResp := TYF_Users.FavouriteAContentItem(
+                    ConfigData.ServerDetails, UserAccessToken.Token, I, 'report', FirstReport.ReportId, FavItem);
+                  if FavResp.Successful and Assigned(FavItem) then
+                  begin
+                    Writeln('  Favourited: '+FavItem.Title);
+                    Writeln('  Content Type: '+FavItem.ContentType);
+                    Writeln('  Content UUID: '+FavItem.ContentUuid);
+                  end
+                  else
+                    Writeln('  Failed to favourite: '+FavResp.Status.ToString);
+                end;
+              end;
+            end;
+
           end;
         end;
 
