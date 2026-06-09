@@ -95,3 +95,4 @@ Examples/API_Explorer/YFAPIExplorer.res
 *.ini
 *.res
 *.vlb
+.DS_Store
